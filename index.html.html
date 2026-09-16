@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Dabaa! 🌷💜</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: #faf7ff;
+    color: #5d4768;
+    overflow-x: hidden;
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+#bgMusic {
+    display: none;
+}
+
+/* =========================
+   OPENING SCREEN
+========================= */
+
+#opening {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #e9d7ff, #faf5ff, #f1e5ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: 1s ease;
+}
+
+.envelope-area {
+    text-align: center;
+    padding: 20px;
+}
+
+.envelope {
+    width: 300px;
+    height: 205px;
+    background: #b98bd4;
+    position: relative;
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 0 20px 50px rgba(100, 50, 130, .25);
+    cursor: pointer;
+    transition: .4s;
+}
+
+.envelope:hover {
+    transform: translateY(-8px);
+}
+
+.envelope:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 110px solid #a879c5;
+
+    z-index: 3;
+}
+
+.envelope:after {
+    content: "💌";
+    position: absolute;
+    font-size: 55px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -20%);
+    z-index: 4;
+}
+
+.envelope-text {
+    margin-top: 25px;
+    color: #704d82;
+}
+
+.envelope-text h1 {
+    font-family: Georgia, serif;
+    font-size: 29px;
+    margin-bottom: 8px;
+}
+
+.envelope-text p {
+    font-size: 15px;
+}
+
+.open-button {
+    margin-top: 20px;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #8e5bb7;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(110, 60, 150, .25);
+    transition: .3s;
+}
+
+.open-button:hover {
+    transform: scale(1.06);
+    background: #74449b;
+}
+
+/* =========================
+   MAIN WEBSITE
+========================= */
+
+#website {
+    display: none;
+}
+
+.hero {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 10% 20%, #eadcff 0 7%, transparent 8%),
+        radial-gradient(circle at 90% 30%, #e3cffc 0 5%, transparent 6%),
+        linear-gradient(135deg, #faf5ff, #eee1ff);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    position: relative;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    max-width: 850px;
+    animation: fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-cat {
+    font-size: 90px;
+    animation: catFloat 3s ease-in-out infinite;
+}
+
+@keyframes catFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+}
+
+.hero-small {
+    color: #8e6aa0;
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 9vw, 85px);
+    color: #8e5bb7;
+    margin: 15px 0;
+}
+
+.hero-name {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: #765282;
+    margin-bottom: 12px;
+}
+
+.hero h2 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: clamp(23px, 5vw, 38px);
+    color: #70527f;
+}
+
+.hero-tulips {
+    font-size: 55px;
+    margin: 25px 0;
+    letter-spacing: 8px;
+}
+
+.scroll-down {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #866792;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        opacity: .5;
+    }
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 90px 20px;
+}
+
+.inner {
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 38px;
+    color: #8e5bb7;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #91749e;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   INTRO CARD
+========================= */
+
+.intro-card {
+    background: rgba(255,255,255,.9);
+    border-radius: 35px;
+    padding: 50px 30px;
+
+    box-shadow:
+        0 20px 60px rgba(100,60,130,.12);
+
+    text-align: center;
+}
+
+.intro-card p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.photo-card {
+    background: white;
+    padding: 10px;
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 35px rgba(100,60,130,.12);
+
+    transition: .4s;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px) rotate(1deg);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+}
+
+.photo-caption {
+    text-align: center;
+    padding: 12px 5px 8px;
+    color: #76567f;
+    font-size: 15px;
+}
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.letter {
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 45px 40px;
+
+    box-shadow:
+        0 20px 60px rgba(100,60,130,.12);
+
+    border: 2px solid #eadcff;
+    position: relative;
+}
+
+.letter:before {
+    content: "💜";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #f3e9ff;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.letter p {
+    font-size: 18px;
+    line-height: 2;
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.signature {
+    margin-top: 35px;
+    text-align: right;
+
+    color: #8e5bb7;
+
+    font-family: Georgia, serif;
+    font-size: 22px;
+}
+
+/* =========================
+   CATS & TULIPS
+========================= */
+
+.decorations {
+    text-align: center;
+    font-size: 55px;
+    margin: 30px 0;
+    letter-spacing: 10px;
+}
+
+.cat-row {
+    text-align: center;
+    font-size: 70px;
+    margin: 30px 0;
+
+    animation: catFloat 3s ease-in-out infinite;
+}
+
+/* =========================
+   SURPRISE
+========================= */
+
+.surprise-box {
+    background:
+        linear-gradient(135deg, #eee1ff, #faf5ff);
+
+    border-radius: 35px;
+
+    padding: 55px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(100,60,130,.12);
+}
+
+.surprise-button {
+    border: none;
+
+    background: #8e5bb7;
+
+    color: white;
+
+    padding: 15px 32px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(100,50,140,.25);
+
+    transition: .3s;
+}
+
+.surprise-button:hover {
+    transform: scale(1.07);
+    background: #70439a;
+}
+
+#surprise-message {
+    display: none;
+    margin-top: 30px;
+    animation: surpriseAppear 1s ease;
+}
+
+@keyframes surpriseAppear {
+    from {
+        opacity: 0;
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.surprise-text {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    color: #8e5bb7;
+    margin-top: 15px;
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #8e5bb7;
+
+    color: white;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+    box-shadow: 0 7px 20px rgba(90,50,120,.3);
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart {
+    position: fixed;
+
+    bottom: -30px;
+
+    font-size: 20px;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation: floatHeart 7s linear infinite;
+
+    opacity: .7;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .8;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 45px 20px;
+    color: #896d95;
+    font-size: 15px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card img {
+        height: 330px;
+    }
+
+    .letter {
+        padding: 40px 22px;
+    }
+
+    .letter p {
+        font-size: 17px;
+    }
+
+    .envelope {
+        width: 270px;
+        height: 185px;
+    }
+
+    .envelope:before {
+        border-left-width: 135px;
+        border-right-width: 135px;
+        border-top-width: 100px;
+    }
+
+    .hero-cat {
+        font-size: 75px;
+    }
+
+    .hero-name {
+        font-size: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     MUSIC
+===================================================== -->
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- =====================================================
+     OPENING SCREEN
+===================================================== -->
+
+<div id="opening">
+
+    <div class="envelope-area">
+
+        <div class="envelope" onclick="openWebsite()"></div>
+
+        <div class="envelope-text">
+
+            <h1>A Little Surprise 💜</h1>
+
+            <p>
+                Someone special made this just for you...
+            </p>
+
+            <button class="open-button" onclick="openWebsite()">
+                Open My Letter! 💌
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN WEBSITE
+===================================================== -->
+
+<div id="website">
+
+    <!-- FLOATING HEARTS -->
+
+    <div class="heart" style="left:5%; animation-delay:0s;">💜</div>
+    <div class="heart" style="left:18%; animation-delay:2s;">💕</div>
+    <div class="heart" style="left:35%; animation-delay:4s;">💜</div>
+    <div class="heart" style="left:55%; animation-delay:1s;">💗</div>
+    <div class="heart" style="left:75%; animation-delay:3s;">💜</div>
+    <div class="heart" style="left:90%; animation-delay:5s;">💕</div>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-cat">
+                🐱🎀
+            </div>
+
+            <div class="hero-tulips">
+                🌷🌷🌷
+            </div>
+
+            <div class="hero-small">
+                A Special Day For Someone Special
+            </div>
+
+            <h1>
+                Happy Birthday
+            </h1>
+
+            <div class="hero-name">
+                Jossie Maeee 💜
+            </div>
+
+            <h2>
+                My Beautiful Lablab 💜
+            </h2>
+
+            <div class="hero-tulips">
+                🌷💜🌷
+            </div>
+
+            <p class="scroll-down">
+                ↓ Scroll down for your surprise ↓
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="section">
+
+        <div class="inner">
+
+            <div class="intro-card">
+
+                <div class="decorations">
+                    🌷 🐱 🌷
+                </div>
+
+                <h2 class="section-title">
+                    Today Is Your Day 💜
+                </h2>
+
+                <p>
+                    Today is a special day because it is the day
+                    a very special person was born.
+
+                    <br><br>
+
+                    Ginawa ko itong maliit na website para sa'yo,
+                    para magkaroon ka ng isang bagay na pwede mong
+                    balikan at maalala kung gaano ka kamahal
+                    at ka-appreciate.
+
+                    <br><br>
+
+                    Happy Birthday, mahal ko. 💜🌷
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHOTO GALLERY -->
+
+    <section class="section">
+
+        <div class="inner">
+
+            <h2 class="section-title">
+                Our Little Memories 📸
+            </h2>
+
+            <p class="section-subtitle">
+                Mga moments na gusto kong itago at alalahanin
+                habang buhay. 💜
+            </p>
+
+            <div class="gallery">
+
+                
+
+
+                <div class="photo-card">
+
+                    <img
+                        src="mj.jpg"
+                        alt="My babyyyyyy!!"
+                    >
+
+                    <div class="photo-caption">
+                        My Beautiful Babyyy 🌷
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LONG LOVE LETTER -->
+
+    <section class="section">
+
+        <div class="inner">
+
+            <h2 class="section-title">
+                💌 Isang Liham Mula sa Puso Ko
+            </h2>
+
+            <p class="section-subtitle">
+                Basahin mo hanggang dulo, mahal. 💜
+            </p>
+
+            <div class="letter">
+
+                <p>
+                    Para sa pinakamaganda kong lablabb,
+                </p>
+
+                <p>
+                    Happy birthday, baby! 💜
+                    Special day mo ngayon, kaya gusto kong
+                    gamitin ang pagkakataong ito para sabihin
+                    sa'yo kung gaano ka kahalaga sa akin.
+                </p>
+
+                <p>
+                    Hindi ko alam kung magiging sapat ba ang mga
+                    salita para maipaliwanag lahat ng nararamdaman
+                    ko para sa'yo, pero susubukan ko pa rin.
+                    Naging napaka-special mong parte ng buhay ko,
+                    at sobrang thankful ako sa bawat moment na
+                    pinagsamahan natin.
+                </p>
+
+                <p>
+                    Mahal ko yung mga maliliit na bagay tungkol sa'yo.
+                    Mahal ko yung smile mo, tawa mo, personality mo,
+                    paraan ng pakikipag-usap mo, at kahit yung mga
+                    moments na nagiging silly ka kahit sa chat lang
+                    at hindi sa personal. 🙁
+                </p>
+
+                <p>
+                    Habang nagce-celebrate ka ng panibagong taon
+                    ng buhay mo, sana lagi mong tandaan na deserve mo
+                    maging masaya, mahalin, magkaroon ng peace,
+                    at magkaroon ng mga magagandang bagay sa buhay.
+                </p>
+
+                <p>
+                    Marami na tayong naranasan. May mga masasayang
+                    araw, may mga araw na nagkakainisan tayo,
+                    nagbabadtrip, naboboring, at kung ano-ano pa.
+                    Pero kahit ano pa man ang mangyari, lagi mong
+                    tandaan na I'm always here lang para sa'yo.
+                </p>
+
+                <p>
+                    Minsan nababadtrip ka, naiinis, naboboring,
+                    pero I still love you. HAHAHAHAHA.
+                    Mahal koooo, I'm so blessed na nagkaroon ako
+                    ng ikaw sa buhay ko. Sobrang thankful ako na
+                    nakilala kita at naging parte ka ng buhay ko.
+                </p>
+
+                <p>
+                    Hayaan mo, sa susunod na birthday mo babawi ako.
+                    Ngayon hindi pa kasi malayo ka eh HAHAHAHA.
+                    Sana mag-enjoy ka ngayon at kalimutan mo muna
+                    kahit sandali yung mga problema mo.
+                    Enjoy your day, baby. Deserve mong maging masaya
+                    ngayong araw.
+                </p>
+
+                <p>
+                    At higit sa lahat, sana lagi mong maalala na
+                    hindi mo kailangang maging perfect para maging
+                    deserving ng love. Kung may mga araw na hindi
+                    maganda, okay lang. Basta huwag mong kalimutan
+                    na may taong nagmamahal at sumusuporta sa'yo.
+                </p>
+
+                <p>
+                    Sana matupad mo lahat ng dreams at goals mo.
+                    Sana maging masaya ka sa kung ano man ang
+                    piliin mong gawin sa buhay. At sana kahit
+                    maraming pagbabago ang mangyari, manatili kang
+                    ikaw—yung taong minahal at minamahal ko.
+                </p>
+
+                <p>
+                    And finally, I hope you have the happiest
+                    birthday. Sana kahit maliit lang itong surprise
+                    ko, napangiti kita kahit kaunti.
+                </p>
+
+                <p>
+                    Lagi mong tandaan na special ka,
+                    maganda ka, at mahal na mahal kita. 💜🌷
+                </p>
+
+                <p>
+                    Happy Birthday, my love. 🐱💜
+                </p>
+
+                <div class="signature">
+
+                    With all my love,<br>
+
+                    MJ 💜
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATS AND TULIPS -->
+
+    <section class="section">
+
+        <div class="inner">
+
+            <div class="cat-row">
+                🐱🌷🐱
+            </div>
+
+            <h2 class="section-title">
+                A Little Garden For You 🌷
+            </h2>
+
+            <p class="section-subtitle">
+                Dahil deserve mo ang isang bagay na soft,
+                cute, at beautiful. 💜
+            </p>
+
+            <div class="decorations">
+                🌷🌷🌷🌷🌷
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL SURPRISE -->
+
+    <section class="section">
+
+        <div class="inner">
+
+            <div class="surprise-box">
+
+                <div style="font-size:70px;">
+                    🎁
+                </div>
+
+                <h2 class="section-title">
+                    One More Surprise 💜
+                </h2>
+
+                <p class="section-subtitle">
+                    May isa pa akong message para sa'yo...
+                </p>
+
+                <button
+                    class="surprise-button"
+                    onclick="showSurprise()"
+                >
+                    Open Your Surprise 🎁
+                </button>
+
+                <div id="surprise-message">
+
+                    <div style="font-size:65px;">
+                        🐱💜🌷
+                    </div>
+
+                    <div class="surprise-text">
+                        I Love You So Much! 💜
+                    </div>
+
+                    <p style="
+                        margin-top:20px;
+                        font-size:18px;
+                        line-height:1.8;
+                    ">
+                        Happy Birthday ulit, baby!
+                        Sana naging special ang araw mo.
+                        Mahal na mahal kita!    */Kiss ur lips, Mwaa Mwaa MWAAA! 💜🌷
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        Made with love by MJ 💜🌷🐱
+        <br><br>
+        Happy Birthday, Jossie Maeee! 🎂💜
+    </footer>
+
+
+    <!-- MUSIC BUTTON -->
+
+    <button
+        class="music-button"
+        id="musicButton"
+        onclick="toggleMusic()"
+        title="Play / Pause Music"
+    >
+        🎵
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =========================
+   OPEN WEBSITE
+========================= */
+
+function openWebsite() {
+
+    const opening = document.getElementById("opening");
+    const website = document.getElementById("website");
+    const music = document.getElementById("bgMusic");
+
+    /* Hide opening screen */
+
+    opening.style.opacity = "0";
+
+    setTimeout(function() {
+
+        opening.style.display = "none";
+        website.style.display = "block";
+
+        /* Try to start music */
+
+        music.play().then(function() {
+
+            document.getElementById("musicButton").innerHTML = "🔊";
+
+        }).catch(function() {
+
+            /*
+             If browser blocks autoplay,
+             the music button can still be pressed.
+            */
+
+            document.getElementById("musicButton").innerHTML = "🎵";
+
+        });
+
+    }, 800);
+}
+/* =========================
+   MUSIC PLAY / PAUSE
+========================= */
+
+function toggleMusic() {
+
+    const music = document.getElementById("bgMusic");
+    const button = document.getElementById("musicButton");
+
+    if (music.paused) {
+
+        music.play();
+
+        button.innerHTML = "🔊";
+
+    } else {
+
+        music.pause();
+
+        button.innerHTML = "🎵";
+
+    }
+}
+
+
+/* =========================
+   FINAL SURPRISE
+========================= */
+
+function showSurprise() {
+
+    const message = document.getElementById("surprise-message");
+
+    message.style.display = "block";
+
+    createHearts();
+}
+
+
+/* =========================
+   EXTRA FLOATING HEARTS
+========================= */
+
+function createHearts() {
+
+    for (let i = 0; i < 20; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.innerHTML = "💜";
+
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "%";
+        heart.style.bottom = "-30px";
+        heart.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
+        heart.style.pointerEvents = "none";
+        heart.style.zIndex = "9999";
+
+        document.body.appendChild(heart);
+
+        const duration =
+            3 + Math.random() * 4;
+
+        heart.animate(
+            [
+                {
+                    transform: "translateY(0)",
+                    opacity: 1
+                },
+                {
+                    transform:
+                        "translateY(-110vh) rotate(360deg)",
+                    opacity: 0
+                }
+            ],
+            {
+                duration: duration * 1000,
+                easing: "linear"
+            }
+        );
+
+        setTimeout(function() {
+
+            heart.remove();
+
+        }, duration * 1000);
+    }
+}
+
+</script>
+
+</body>
+</html>
+
